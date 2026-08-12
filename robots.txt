@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://globalsegurosycia.co/sitemap.xml
+
+# Bloquear acceso a archivos de configuración
+Disallow: /.htaccess
+Disallow: /cgi-bin/

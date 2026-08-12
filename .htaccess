@@ -1,0 +1,57 @@
+# ============================================================
+# Global Seguros y Cia Ltda — .htaccess
+# Dominio: https://globalsegurosycia.co
+# Coloque este archivo en la raíz de public_html/
+# ============================================================
+
+RewriteEngine On
+
+# 1. Forzar HTTPS (HTTP → HTTPS)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirigir www → sin www
+RewriteCond %{HTTP_HOST} ^www\.globalsegurosycia\.co$ [NC]
+RewriteRule ^(.*)$ https://globalsegurosycia.co/$1 [L,R=301]
+
+# Deshabilitar listado de directorios (seguridad)
+Options -Indexes
+
+# Cabeceras de seguridad
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Caché del navegador (mejora la velocidad de carga)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css             "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType text/html            "access plus 1 hour"
+  ExpiresByType image/jpeg           "access plus 90 days"
+  ExpiresByType image/png            "access plus 90 days"
+  ExpiresByType image/svg+xml        "access plus 90 days"
+  ExpiresByType image/webp           "access plus 90 days"
+  ExpiresByType font/woff2           "access plus 1 year"
+</IfModule>
+
+# Compresión GZIP (reduce el tamaño de archivos transferidos ~70%)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# Página de error 404 personalizada (opcional)
+# ErrorDocument 404 /index.html
+
+# Permisos de archivos correctos
+<FilesMatch "\.html$">
+  Header set Cache-Control "max-age=3600, must-revalidate"
+</FilesMatch>
