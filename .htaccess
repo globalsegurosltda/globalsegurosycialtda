@@ -1,6 +1,6 @@
 # ============================================================
 # Global Seguros y Cia Ltda — .htaccess
-# Dominio: https://globalsegurosycia.co
+# Dominio: https://globalsegurosycia.com
 # Coloque este archivo en la raíz de public_html/
 # ============================================================
 
@@ -11,8 +11,8 @@ RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # 2. Redirigir www → sin www
-RewriteCond %{HTTP_HOST} ^www\.globalsegurosycia\.co$ [NC]
-RewriteRule ^(.*)$ https://globalsegurosycia.co/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.globalsegurosycia\.com$ [NC]
+RewriteRule ^(.*)$ https://globalsegurosycia.com/$1 [L,R=301]
 
 # Deshabilitar listado de directorios (seguridad)
 Options -Indexes
