@@ -254,6 +254,9 @@ p  { line-height: 1.7; }
 .logo-name { font-family: var(--font-heading); font-weight: 800; font-size: 1rem; color: var(--navy-900); line-height: 1.1; letter-spacing: -0.02em; }
 .logo-sub  { font-size: 0.65rem; color: var(--orange-300); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; }
 
+.logo-img { height: 38px; width: auto; display: block; }
+.footer-logo .logo-img { height: 34px; }
+
 .nav-links {
   display: flex;
   align-items: center;
