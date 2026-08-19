@@ -650,6 +650,72 @@ p  { line-height: 1.7; }
   align-items: start;
 }
 
+/* ============================================================
+   SERVICE CARDS GRID (categorías de seguros con link externo)
+   ============================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  border-color: var(--orange-500);
+}
+.service-icon {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-2);
+}
+.service-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy-900);
+  line-height: 1.25;
+}
+.service-desc {
+  color: var(--gray-500);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-4);
+}
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding: var(--space-2) var(--space-5);
+  background: linear-gradient(135deg, var(--navy-700), var(--navy-600));
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 15px rgba(26,58,110,.25);
+}
+.service-cta:hover {
+  background: linear-gradient(135deg, var(--orange-600), var(--orange-500));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(224,123,42,.35);
+}
+
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--space-4); }
+  .service-card { padding: var(--space-5) var(--space-4); }
+}
+
 .panel-badge {
   display: inline-block;
   padding: var(--space-1) var(--space-4);
