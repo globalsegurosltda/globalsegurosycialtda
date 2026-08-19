@@ -1489,6 +1489,33 @@ textarea { resize: vertical; min-height: 80px; }
 .back-to-top:hover { transform: translateY(-3px); background: linear-gradient(135deg, var(--orange-600), var(--orange-500)); }
 
 /* ============================================================
+   FLOATING WHATSAPP BUTTON
+   ============================================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: var(--space-8);
+  left: var(--space-8);
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37,211,102,.45);
+  z-index: 999;
+  transition: var(--transition-normal);
+}
+.whatsapp-float svg { width: 28px; height: 28px; }
+.whatsapp-float:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 28px rgba(37,211,102,.55); }
+
+@media (max-width: 768px) {
+  .whatsapp-float { width: 50px; height: 50px; bottom: var(--space-5); left: var(--space-5); }
+  .whatsapp-float svg { width: 24px; height: 24px; }
+}
+
+/* ============================================================
    RESPONSIVE — Tablet
    ============================================================ */
 @media (max-width: 1024px) {
@@ -1595,7 +1622,7 @@ textarea { resize: vertical; min-height: 80px; }
    PRINT STYLES
    ============================================================ */
 @media print {
-  .navbar, .back-to-top, .hero-visual, .hero-particles, .scroll-indicator { display: none; }
+  .navbar, .back-to-top, .whatsapp-float, .hero-visual, .hero-particles, .scroll-indicator { display: none; }
   .hero { min-height: auto; padding: 2rem; }
   body { color: #000; }
 }

@@ -40,7 +40,6 @@
 
       <ul class="nav-links" id="navLinks" role="list">
         <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#cotizador" class="nav-link">Cotizar</a></li>
         <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
         <li><a href="#contacto" class="nav-link">Contacto</a></li>
         <li><a href="#contacto" class="nav-cta">Contáctenos</a></li>
@@ -68,7 +67,7 @@
         Más de 15 años de experiencia en el mercado colombiano.
       </p>
       <div class="hero-actions">
-        <a href="#cotizador" class="btn-primary" id="hero-quote-btn">
+        <a href="#servicios" class="btn-primary" id="hero-quote-btn">
           Cotizar ahora
           <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
         </a>
@@ -358,302 +357,6 @@
     </div>
   </section>
 
-  <!-- ====== COTIZADOR ====== -->
-  <section id="cotizador" class="cotizador" aria-labelledby="cotizador-title">
-    <div class="section-container">
-      <div class="section-header light">
-        <span class="section-tag light">Cotizador en línea</span>
-        <h2 id="cotizador-title" class="section-title light">Obtenga su cotización en minutos</h2>
-        <p class="section-subtitle light">Diligencie el formulario y le enviaremos su cotización personalizada en menos de 24 horas.</p>
-      </div>
-
-      <div class="cotizador-wrapper">
-        <!-- Step Indicator -->
-        <div class="steps-indicator" aria-label="Paso actual del cotizador" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3">
-          <div class="step active" id="step-indicator-1">
-            <div class="step-circle">1</div>
-            <span>Tipo de seguro</span>
-          </div>
-          <div class="step-line" aria-hidden="true"></div>
-          <div class="step" id="step-indicator-2">
-            <div class="step-circle">2</div>
-            <span>Sus datos</span>
-          </div>
-          <div class="step-line" aria-hidden="true"></div>
-          <div class="step" id="step-indicator-3">
-            <div class="step-circle">3</div>
-            <span>Confirmar</span>
-          </div>
-        </div>
-
-        <form class="cotizador-form" id="cotizadorForm" novalidate aria-label="Formulario de cotización">
-
-          <!-- PASO 1: Tipo de seguro -->
-          <div class="form-step active" id="form-step-1" role="group" aria-labelledby="step1-title">
-            <h3 id="step1-title" class="form-step-title">¿Qué tipo de seguro necesita?</h3>
-            <div class="insurance-selector" role="radiogroup" aria-label="Seleccione el tipo de seguro">
-              <label class="insurance-option" for="tipo-autos">
-                <input type="radio" name="tipo_seguro" id="tipo-autos" value="autos" required />
-                <div class="io-content">
-                  <div class="io-icon" aria-hidden="true">🚗</div>
-                  <div class="io-label">Seguro de Autos</div>
-                  <div class="io-desc">Todo riesgo, pérdida total, RC</div>
-                </div>
-              </label>
-              <label class="insurance-option" for="tipo-cumplimiento">
-                <input type="radio" name="tipo_seguro" id="tipo-cumplimiento" value="cumplimiento" />
-                <div class="io-content">
-                  <div class="io-icon" aria-hidden="true">📋</div>
-                  <div class="io-label">Cumplimiento</div>
-                  <div class="io-desc">Contratos públicos y privados</div>
-                </div>
-              </label>
-              <label class="insurance-option" for="tipo-vida">
-                <input type="radio" name="tipo_seguro" id="tipo-vida" value="vida" />
-                <div class="io-content">
-                  <div class="io-icon" aria-hidden="true">❤️</div>
-                  <div class="io-label">Seguro de Vida</div>
-                  <div class="io-desc">Vida, invalidez, enfermedades</div>
-                </div>
-              </label>
-              <label class="insurance-option" for="tipo-arriendo">
-                <input type="radio" name="tipo_seguro" id="tipo-arriendo" value="arriendo" />
-                <div class="io-content">
-                  <div class="io-icon" aria-hidden="true">🏠</div>
-                  <div class="io-label">Seguro de Arriendo</div>
-                  <div class="io-desc">Cánon garantizado, daños</div>
-                </div>
-              </label>
-            </div>
-
-            <!-- Detalles dinámicos según tipo -->
-            <div class="dynamic-fields" id="dynamicFields">
-              <!-- Autos -->
-              <div class="dynamic-group" id="fields-autos" aria-live="polite">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="marca-auto">Marca del vehículo</label>
-                    <select id="marca-auto" name="marca_auto">
-                      <option value="">Seleccione marca</option>
-                      <option>Chevrolet</option><option>Renault</option><option>Mazda</option>
-                      <option>Toyota</option><option>Kia</option><option>Hyundai</option>
-                      <option>Nissan</option><option>Ford</option><option>Volkswagen</option>
-                      <option>Otro</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="anio-auto">Año del vehículo</label>
-                    <input type="number" id="anio-auto" name="anio_auto" min="2000" max="2026" placeholder="Ej: 2022" />
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="valor-auto">Valor comercial (COP)</label>
-                    <input type="text" id="valor-auto" name="valor_auto" placeholder="Ej: 50.000.000" />
-                  </div>
-                  <div class="form-group">
-                    <label for="placa-auto">Placa (opcional)</label>
-                    <input type="text" id="placa-auto" name="placa_auto" placeholder="Ej: ABC123" maxlength="6" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cumplimiento -->
-              <div class="dynamic-group hidden" id="fields-cumplimiento">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="tipo-contrato">Tipo de contrato</label>
-                    <select id="tipo-contrato" name="tipo_contrato">
-                      <option value="">Seleccione tipo</option>
-                      <option>Contrato estatal (Ley 80)</option>
-                      <option>Obra civil</option>
-                      <option>Contrato privado</option>
-                      <option>Anticipo</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="valor-contrato">Valor del contrato (COP)</label>
-                    <input type="text" id="valor-contrato" name="valor_contrato" placeholder="Ej: 500.000.000" />
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="plazo-contrato">Plazo del contrato</label>
-                    <input type="text" id="plazo-contrato" name="plazo_contrato" placeholder="Ej: 12 meses" />
-                  </div>
-                  <div class="form-group">
-                    <label for="entidad-contratante">Entidad contratante</label>
-                    <input type="text" id="entidad-contratante" name="entidad_contratante" placeholder="Nombre de la entidad" />
-                  </div>
-                </div>
-              </div>
-
-              <!-- Vida -->
-              <div class="dynamic-group hidden" id="fields-vida">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="edad-asegurado">Edad del asegurado</label>
-                    <input type="number" id="edad-asegurado" name="edad_asegurado" min="18" max="70" placeholder="Ej: 35" />
-                  </div>
-                  <div class="form-group">
-                    <label for="capital-vida">Capital asegurado deseado</label>
-                    <select id="capital-vida" name="capital_vida">
-                      <option value="">Seleccione capital</option>
-                      <option>Hasta $50M COP</option>
-                      <option>$50M - $100M COP</option>
-                      <option>$100M - $200M COP</option>
-                      <option>$200M - $500M COP</option>
-                      <option>Más de $500M COP</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="cobertura-vida">Coberturas adicionales</label>
-                    <div class="checkbox-group" role="group" aria-label="Coberturas adicionales de vida">
-                      <label class="checkbox-option"><input type="checkbox" name="cob_invalidez" value="si"> Invalidez total</label>
-                      <label class="checkbox-option"><input type="checkbox" name="cob_enfermedades" value="si"> Enfermedades graves</label>
-                      <label class="checkbox-option"><input type="checkbox" name="cob_renta" value="si"> Renta por incapacidad</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Arriendo -->
-              <div class="dynamic-group hidden" id="fields-arriendo">
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="canon-arriendo">Canon mensual de arriendo (COP)</label>
-                    <input type="text" id="canon-arriendo" name="canon_arriendo" placeholder="Ej: 1.500.000" />
-                  </div>
-                  <div class="form-group">
-                    <label for="tipo-inmueble">Tipo de inmueble</label>
-                    <select id="tipo-inmueble" name="tipo_inmueble">
-                      <option value="">Seleccione tipo</option>
-                      <option>Apartamento</option>
-                      <option>Casa</option>
-                      <option>Local comercial</option>
-                      <option>Oficina</option>
-                      <option>Bodega</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="ciudad-inmueble">Ciudad del inmueble</label>
-                    <select id="ciudad-inmueble" name="ciudad_inmueble">
-                      <option value="">Seleccione ciudad</option>
-                      <option>Bogotá</option><option>Medellín</option><option>Cali</option>
-                      <option>Barranquilla</option><option>Cartagena</option><option>Bucaramanga</option>
-                      <option>Manizales</option><option>Pereira</option><option>Otra</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="valor-inmueble">Valor estimado del inmueble (COP)</label>
-                    <input type="text" id="valor-inmueble" name="valor_inmueble" placeholder="Ej: 300.000.000" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-nav">
-              <button type="button" class="btn-primary" id="nextStep1" onclick="goToStep(2)">Continuar →</button>
-            </div>
-          </div>
-
-          <!-- PASO 2: Datos del solicitante -->
-          <div class="form-step" id="form-step-2" role="group" aria-labelledby="step2-title" hidden>
-            <h3 id="step2-title" class="form-step-title">Sus datos de contacto</h3>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="nombre-sol">Nombre completo <span class="required" aria-hidden="true">*</span></label>
-                <input type="text" id="nombre-sol" name="nombre" required placeholder="Juan García" autocomplete="name" />
-                <span class="field-error" id="nombre-sol-error" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="cedula-sol">Cédula de ciudadanía <span class="required" aria-hidden="true">*</span></label>
-                <input type="text" id="cedula-sol" name="cedula" required placeholder="Ej: 1020304050" />
-                <span class="field-error" id="cedula-sol-error" role="alert"></span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email-sol">Correo electrónico <span class="required" aria-hidden="true">*</span></label>
-                <input type="email" id="email-sol" name="email" required placeholder="juan@ejemplo.com" autocomplete="email" />
-                <span class="field-error" id="email-sol-error" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="telefono-sol">Teléfono / WhatsApp <span class="required" aria-hidden="true">*</span></label>
-                <input type="tel" id="telefono-sol" name="telefono" required placeholder="Ej: 3001234567" autocomplete="tel" />
-                <span class="field-error" id="telefono-sol-error" role="alert"></span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="ciudad-sol">Ciudad de residencia <span class="required" aria-hidden="true">*</span></label>
-                <select id="ciudad-sol" name="ciudad" required>
-                  <option value="">Seleccione su ciudad</option>
-                  <option>Bogotá</option><option>Medellín</option><option>Cali</option>
-                  <option>Barranquilla</option><option>Cartagena</option><option>Bucaramanga</option>
-                  <option>Manizales</option><option>Pereira</option><option>Otra</option>
-                </select>
-                <span class="field-error" id="ciudad-sol-error" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="como-conocio">¿Cómo nos conoció?</label>
-                <select id="como-conocio" name="como_conocio">
-                  <option value="">Seleccione</option>
-                  <option>Google / Internet</option>
-                  <option>Recomendación</option>
-                  <option>Redes sociales</option>
-                  <option>Otro</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="notas-sol">Información adicional</label>
-              <textarea id="notas-sol" name="notas" rows="3" placeholder="Cuéntenos sobre su caso o necesidad específica..."></textarea>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-outline" onclick="goToStep(1)">← Atrás</button>
-              <button type="button" class="btn-primary" id="nextStep2" onclick="validateAndGoToStep3()">Continuar →</button>
-            </div>
-          </div>
-
-          <!-- PASO 3: Confirmación -->
-          <div class="form-step" id="form-step-3" role="group" aria-labelledby="step3-title" hidden>
-            <h3 id="step3-title" class="form-step-title">Confirme su solicitud</h3>
-            <div class="summary-card" id="summaryCard" aria-label="Resumen de la solicitud" aria-live="polite">
-              <!-- Se llena con JS -->
-            </div>
-            <div class="terms-check">
-              <label class="checkbox-option" for="acepta-terminos">
-                <input type="checkbox" id="acepta-terminos" name="acepta_terminos" required />
-                Acepto la <a href="#" class="link-inline">política de privacidad</a> y el tratamiento de mis datos personales conforme a la Ley 1581 de 2012.
-              </label>
-            </div>
-            <div class="form-nav">
-              <button type="button" class="btn-outline" onclick="goToStep(2)">← Atrás</button>
-              <button type="submit" class="btn-primary btn-submit" id="submitBtn">
-                <span class="btn-text">Enviar solicitud de cotización</span>
-                <span class="btn-loader" hidden aria-hidden="true">⏳</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- SUCCESS STATE -->
-          <div class="form-success" id="formSuccess" hidden role="status" aria-live="polite">
-            <div class="success-icon" aria-hidden="true">✅</div>
-            <h3>¡Solicitud enviada exitosamente!</h3>
-            <p>Hemos recibido su solicitud de cotización. Nuestro equipo se comunicará con usted en menos de <strong>24 horas</strong> al correo y teléfono proporcionados.</p>
-            <div class="success-details" id="successDetails"></div>
-            <button type="button" class="btn-primary" onclick="resetForm()">Realizar otra cotización</button>
-          </div>
-
-        </form>
-      </div>
-    </div>
-  </section>
 
   <!-- ====== NOSOTROS ====== -->
   <section id="nosotros" class="nosotros" aria-labelledby="nosotros-title">
@@ -874,17 +577,17 @@
         <div class="footer-links-group">
           <h4>Seguros</h4>
           <ul role="list">
-            <li><a href="#servicios" onclick="switchTab('autos')">Seguro de Autos</a></li>
-            <li><a href="#servicios" onclick="switchTab('cumplimiento')">Seguro de Cumplimiento</a></li>
-            <li><a href="#servicios" onclick="switchTab('vida')">Seguro de Vida</a></li>
-            <li><a href="#servicios" onclick="switchTab('arriendo')">Seguro de Arriendo</a></li>
+            <li><a href="#servicios" onclick="activateTab('generales')">Seguros y Servicios</a></li>
+            <li><a href="#servicios" onclick="activateTab('financieros')">Cumplimiento y Finanzas</a></li>
+            <li><a href="#servicios" onclick="activateTab('personas')">Personas y Familia</a></li>
+            <li><a href="#servicios" onclick="activateTab('empresariales')">Seguros Empresariales</a></li>
           </ul>
         </div>
         <div class="footer-links-group">
           <h4>Empresa</h4>
           <ul role="list">
             <li><a href="#nosotros">Sobre Nosotros</a></li>
-            <li><a href="#cotizador">Cotizador Online</a></li>
+            <li><a href="#servicios">Cotizar Seguro</a></li>
             <li><a href="#contacto">Contacto</a></li>
             <li><a href="#">Política de Privacidad</a></li>
           </ul>
@@ -905,6 +608,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/573112959002?text=Hola%2C%20quiero%20cotizar%20un%20seguro%20con%20Global%20Seguros%20y%20C%C3%ADa" class="whatsapp-float" id="whatsappFloat" aria-label="Escríbenos por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <!-- BACK TO TOP -->
   <button class="back-to-top" id="backToTop" aria-label="Volver al inicio" hidden>
