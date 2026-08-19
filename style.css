@@ -687,9 +687,18 @@ p  { line-height: 1.7; }
   line-height: 1.25;
 }
 .service-desc {
-  color: var(--gray-500);
-  font-size: 0.85rem;
-  margin-bottom: var(--space-4);
+  color: var(--gray-400);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+.service-text {
+  color: var(--gray-600);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-5);
 }
 .service-cta {
   display: inline-flex;
