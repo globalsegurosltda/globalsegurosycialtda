@@ -1177,19 +1177,22 @@ textarea { resize: vertical; min-height: 80px; }
 .checkbox-group { display: flex; flex-direction: column; gap: var(--space-2); }
 .checkbox-option {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-2);
   cursor: pointer;
   color: rgba(255,255,255,.7);
   font-size: 0.88rem;
+  line-height: 1.5;
 }
 .checkbox-option input[type="checkbox"] {
   width: 16px;
   height: 16px;
   min-width: 16px;
+  margin-top: 3px;
   accent-color: var(--orange-500);
   cursor: pointer;
 }
+.checkbox-text { flex: 1; }
 .contacto-form .checkbox-option { color: var(--gray-600); }
 
 .link-inline { color: var(--orange-400); text-decoration: underline; }
