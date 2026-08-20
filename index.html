@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="style.css" />
   <!-- EmailJS SDK v4 -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
 <body>
 
@@ -93,22 +94,25 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="hero-card floating">
-        <div class="hcard-icon">🛡️</div>
+      <div class="hero-photo-frame">
+        <img src="assets/hero-familia.jpg" alt="" class="hero-photo" />
+      </div>
+      <div class="hero-card floating hc-pos-1">
+        <div class="hcard-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
         <div class="hcard-text">
           <strong>Protección total</strong>
           <span>4 tipos de seguros</span>
         </div>
       </div>
-      <div class="hero-card floating delay-1">
-        <div class="hcard-icon">⚡</div>
+      <div class="hero-card floating delay-1 hc-pos-2">
+        <div class="hcard-icon"><i class="ti ti-bolt" aria-hidden="true"></i></div>
         <div class="hcard-text">
           <strong>Respuesta rápida</strong>
           <span>24/7 soporte</span>
         </div>
       </div>
-      <div class="hero-card floating delay-2">
-        <div class="hcard-icon">✅</div>
+      <div class="hero-card floating delay-2 hc-pos-3">
+        <div class="hcard-icon"><i class="ti ti-certificate" aria-hidden="true"></i></div>
         <div class="hcard-text">
           <strong>Certificados</strong>
           <span>Por Fasecolda</span>
@@ -135,19 +139,19 @@
       <!-- TABS -->
       <div class="tabs-wrapper" role="tablist" aria-label="Categorías de seguros">
         <button class="tab-btn active" id="tab-generales" role="tab" aria-selected="true" aria-controls="panel-generales" data-tab="generales">
-          <span class="tab-icon" aria-hidden="true">🛡️</span>
+          <span class="tab-icon" aria-hidden="true"><i class="ti ti-shield"></i></span>
           <span>Seguros y Servicios</span>
         </button>
         <button class="tab-btn" id="tab-financieros" role="tab" aria-selected="false" aria-controls="panel-financieros" data-tab="financieros">
-          <span class="tab-icon" aria-hidden="true">📋</span>
+          <span class="tab-icon" aria-hidden="true"><i class="ti ti-clipboard-check"></i></span>
           <span>Cumplimiento y Finanzas</span>
         </button>
         <button class="tab-btn" id="tab-personas" role="tab" aria-selected="false" aria-controls="panel-personas" data-tab="personas">
-          <span class="tab-icon" aria-hidden="true">❤️</span>
+          <span class="tab-icon" aria-hidden="true"><i class="ti ti-heart"></i></span>
           <span>Personas y Familia</span>
         </button>
         <button class="tab-btn" id="tab-empresariales" role="tab" aria-selected="false" aria-controls="panel-empresariales" data-tab="empresariales">
-          <span class="tab-icon" aria-hidden="true">💼</span>
+          <span class="tab-icon" aria-hidden="true"><i class="ti ti-briefcase"></i></span>
           <span>Seguros Empresariales</span>
         </button>
       </div>
@@ -160,7 +164,7 @@
           <div class="services-grid">
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🚗</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-car"></i></div>
               <h3 class="service-name">Autos</h3>
               <p class="service-desc">Vehículos</p>
               <p class="service-text">Cobertura para tu vehículo ante accidentes, robo y daños a terceros.</p>
@@ -170,7 +174,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🏍️</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-motorbike"></i></div>
               <h3 class="service-name">Motos</h3>
               <p class="service-desc">Vehículos</p>
               <p class="service-text">Protección para tu moto en caso de accidente, robo o daños a terceros.</p>
@@ -180,7 +184,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🚲</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-bike"></i></div>
               <h3 class="service-name">Bicicleta</h3>
               <p class="service-desc">Vehículos</p>
               <p class="service-text">Aseguramiento de tu bicicleta contra robo, daños y accidentes.</p>
@@ -190,7 +194,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🏠</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-home"></i></div>
               <h3 class="service-name">Hogar</h3>
               <p class="service-desc">Patrimonio y bienes</p>
               <p class="service-text">Protege tu vivienda y sus contenidos ante incendio, robo y desastres naturales.</p>
@@ -200,7 +204,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🐾</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-paw"></i></div>
               <h3 class="service-name">Mascotas</h3>
               <p class="service-desc">Mascotas</p>
               <p class="service-text">Cobertura veterinaria y de responsabilidad civil para tu mascota.</p>
@@ -217,7 +221,7 @@
           <div class="services-grid">
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">📋</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-clipboard-check"></i></div>
               <h3 class="service-name">Cumplimiento</h3>
               <p class="service-desc">Caución, garantías y crédito</p>
               <p class="service-text">Garantiza el cumplimiento de contratos públicos y privados ante el Estado o terceros.</p>
@@ -227,7 +231,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🔑</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-key"></i></div>
               <h3 class="service-name">Arrendamiento</h3>
               <p class="service-desc">Caución, garantías y crédito</p>
               <p class="service-text">Asegura el pago del canon y protege tu inmueble frente al inquilino.</p>
@@ -237,7 +241,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🎓</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-school"></i></div>
               <h3 class="service-name">Educativo</h3>
               <p class="service-desc">Ahorro y pensiones</p>
               <p class="service-text">Ahorro programado para asegurar la educación de tus hijos.</p>
@@ -254,7 +258,7 @@
           <div class="services-grid">
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🏥</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-stethoscope"></i></div>
               <h3 class="service-name">Salud</h3>
               <p class="service-desc">Salud</p>
               <p class="service-text">Acceso a atención médica de calidad, exámenes y hospitalización.</p>
@@ -264,7 +268,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🛡️</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-shield-heart"></i></div>
               <h3 class="service-name">Vida</h3>
               <p class="service-desc">Vida y decesos</p>
               <p class="service-text">Protección financiera para tu familia en caso de fallecimiento o invalidez.</p>
@@ -274,7 +278,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🕊️</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-flower"></i></div>
               <h3 class="service-name">Exequial</h3>
               <p class="service-desc">Vida y decesos</p>
               <p class="service-text">Cobertura de gastos funerarios y servicios exequiales para tu familia.</p>
@@ -284,7 +288,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">✈️</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-plane"></i></div>
               <h3 class="service-name">Viaje</h3>
               <p class="service-desc">Viaje y asistencia</p>
               <p class="service-text">Asistencia médica y protección de tu equipaje durante tus viajes.</p>
@@ -294,7 +298,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">⚕️</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-scale"></i></div>
               <h3 class="service-name">RC Médicos &amp; Profesionales</h3>
               <p class="service-desc">Responsabilidad civil</p>
               <p class="service-text">Responsabilidad civil por errores u omisiones en el ejercicio profesional.</p>
@@ -311,7 +315,7 @@
           <div class="services-grid">
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">💼</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-building-store"></i></div>
               <h3 class="service-name">Pymes</h3>
               <p class="service-desc">Patrimonio y bienes</p>
               <p class="service-text">Protección integral para los activos y la operación de tu pequeña o mediana empresa.</p>
@@ -321,7 +325,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🏘️</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-building-community"></i></div>
               <h3 class="service-name">Copropiedad</h3>
               <p class="service-desc">Patrimonio y bienes</p>
               <p class="service-text">Cobertura para las áreas comunes y bienes de tu conjunto residencial o edificio.</p>
@@ -331,7 +335,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">🚚</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-truck"></i></div>
               <h3 class="service-name">Transporte de Mercancías</h3>
               <p class="service-desc">Transporte de mercancías</p>
               <p class="service-text">Asegura tu carga durante el transporte terrestre, marítimo o aéreo.</p>
@@ -341,7 +345,7 @@
             </div>
 
             <div class="service-card">
-              <div class="service-icon" aria-hidden="true">👥</div>
+              <div class="service-icon" aria-hidden="true"><i class="ti ti-users"></i></div>
               <h3 class="service-name">Colectivas y Beneficios Corporativos</h3>
               <p class="service-desc">Vida y decesos</p>
               <p class="service-text">Planes de vida y beneficios grupales para los empleados de tu empresa.</p>
@@ -376,28 +380,28 @@
           </p>
           <div class="nosotros-values" role="list" aria-label="Nuestros valores">
             <div class="value-item" role="listitem">
-              <div class="value-icon" aria-hidden="true">🎯</div>
+              <div class="value-icon" aria-hidden="true"><i class="ti ti-target-arrow"></i></div>
               <div>
                 <strong>Transparencia</strong>
                 <p>Sin letras pequeñas, sin sorpresas</p>
               </div>
             </div>
             <div class="value-item" role="listitem">
-              <div class="value-icon" aria-hidden="true">⚡</div>
+              <div class="value-icon" aria-hidden="true"><i class="ti ti-bolt"></i></div>
               <div>
                 <strong>Rapidez</strong>
                 <p>Respuesta en menos de 24 horas</p>
               </div>
             </div>
             <div class="value-item" role="listitem">
-              <div class="value-icon" aria-hidden="true">🤝</div>
+              <div class="value-icon" aria-hidden="true"><i class="ti ti-handshake"></i></div>
               <div>
                 <strong>Confianza</strong>
                 <p>Relaciones de largo plazo</p>
               </div>
             </div>
             <div class="value-item" role="listitem">
-              <div class="value-icon" aria-hidden="true">🏆</div>
+              <div class="value-icon" aria-hidden="true"><i class="ti ti-trophy"></i></div>
               <div>
                 <strong>Experiencia</strong>
                 <p>15+ años en el mercado colombiano</p>
@@ -451,14 +455,14 @@
       <div class="contacto-layout">
         <div class="contacto-info">
           <div class="contact-item" role="group" aria-label="Dirección">
-            <div class="contact-icon" aria-hidden="true">📍</div>
+            <div class="contact-icon" aria-hidden="true"><i class="ti ti-map-pin"></i></div>
             <div>
               <strong>Dirección</strong>
               <p>Calle 100 # 19-61, Of. 302<br />Bogotá D.C., Colombia</p>
             </div>
           </div>
           <div class="contact-item" role="group" aria-label="Teléfono">
-            <div class="contact-icon" aria-hidden="true">📞</div>
+            <div class="contact-icon" aria-hidden="true"><i class="ti ti-phone"></i></div>
             <div>
               <strong>Teléfono</strong>
               <p><a href="tel:+5716001234" class="contact-link">(601) 600-1234</a></p>
@@ -466,7 +470,7 @@
             </div>
           </div>
           <div class="contact-item" role="group" aria-label="Correo electrónico">
-            <div class="contact-icon" aria-hidden="true">✉️</div>
+            <div class="contact-icon" aria-hidden="true"><i class="ti ti-mail"></i></div>
             <div>
               <strong>Correo electrónico</strong>
               <p><a href="mailto:cumplimiento@gsf.com.co" class="contact-link">cumplimiento@gsf.com.co</a></p>
@@ -474,7 +478,7 @@
             </div>
           </div>
           <div class="contact-item" role="group" aria-label="Horario de atención">
-            <div class="contact-icon" aria-hidden="true">🕐</div>
+            <div class="contact-icon" aria-hidden="true"><i class="ti ti-clock"></i></div>
             <div>
               <strong>Horario de atención</strong>
               <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br />Sábados: 9:00 AM - 1:00 PM</p>
@@ -547,7 +551,7 @@
             </button>
           </form>
           <div class="contact-success" id="contactSuccess" hidden role="status" aria-live="polite">
-            <div class="success-icon" aria-hidden="true">✅</div>
+            <div class="success-icon" aria-hidden="true"><i class="ti ti-circle-check"></i></div>
             <h4>¡Mensaje enviado!</h4>
             <p>Nos comunicaremos con usted pronto. Gracias por contactar a Global Seguros y Cia Ltda.</p>
           </div>
@@ -595,10 +599,10 @@
         <div class="footer-links-group">
           <h4>Contacto</h4>
           <address style="font-style:normal;">
-            <p>📍 Bogotá D.C., Colombia</p>
-            <p>📞 <a href="tel:+5716001234">(601) 600-1234</a></p>
-            <p>✉️ <a href="mailto:cumplimiento@gsf.com.co">cumplimiento@gsf.com.co</a></p>
-            <p>🕐 Lun-Vie: 8AM - 6PM</p>
+            <p><i class="ti ti-map-pin" aria-hidden="true"></i> Bogotá D.C., Colombia</p>
+            <p><i class="ti ti-phone" aria-hidden="true"></i> <a href="tel:+5716001234">(601) 600-1234</a></p>
+            <p><i class="ti ti-mail" aria-hidden="true"></i> <a href="mailto:cumplimiento@gsf.com.co">cumplimiento@gsf.com.co</a></p>
+            <p><i class="ti ti-clock" aria-hidden="true"></i> Lun-Vie: 8AM - 6PM</p>
           </address>
         </div>
       </div>
