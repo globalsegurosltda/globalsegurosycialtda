@@ -392,7 +392,7 @@ p  { line-height: 1.7; }
   z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-16) var(--space-6);
+  padding: var(--space-16) clamp(var(--space-6), 5vw, 80px);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 400px;
