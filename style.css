@@ -346,14 +346,21 @@ p  { line-height: 1.7; }
   inset: 0;
   z-index: 0;
 }
+.hero-photo-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: left center;
+  z-index: 0;
+}
 .hero-gradient {
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(100deg, rgba(255,255,255,.93) 0%, rgba(255,255,255,.88) 40%, rgba(247,249,252,.8) 70%, rgba(247,249,252,.72) 100%),
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,99,235,.08) 0%, transparent 70%),
     radial-gradient(ellipse 60% 80% at 20% 80%, rgba(224,123,42,.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 85% 15%, rgba(26,58,110,.06) 0%, transparent 60%),
-    linear-gradient(160deg, #ffffff 0%, #f7f9fc 50%, #ffffff 100%);
+    radial-gradient(ellipse 40% 40% at 85% 15%, rgba(26,58,110,.06) 0%, transparent 60%);
 }
 
 /* Animated particles */
@@ -481,51 +488,28 @@ p  { line-height: 1.7; }
   background: rgba(10,22,40,.12);
 }
 
-/* Hero photo + floating trust cards */
+/* Hero floating cards (photo now lives as full-section background) */
 .hero-visual {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
   align-self: center;
-  width: 100%;
-  max-width: 100%;
-  height: 520px;
-  box-sizing: border-box;
-  overflow: visible;
-}
-
-.hero-photo-frame {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-}
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .hero-card {
-  position: absolute;
   background: var(--white);
   border: 1px solid rgba(10,22,40,.08);
-  box-shadow: 0 8px 30px rgba(10,22,40,.15);
+  box-shadow: 0 8px 30px rgba(10,22,40,.1);
   border-radius: var(--radius-xl);
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-5) var(--space-6);
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  max-width: 220px;
+  gap: var(--space-4);
   transition: transform var(--transition-normal);
-  z-index: 2;
 }
 .hero-card:hover { transform: translateX(-4px) !important; }
-
-.hc-pos-1 { top: 20px; right: 20px; }
-.hc-pos-2 { top: 45%; left: 20px; transform: translateY(-50%); }
-.hc-pos-3 { bottom: 20px; right: 20px; }
 
 .hcard-icon {
   width: 44px;
@@ -540,8 +524,8 @@ p  { line-height: 1.7; }
   font-size: 1.3rem;
 }
 .hcard-text { display: flex; flex-direction: column; }
-.hcard-text strong { color: var(--navy-900); font-size: 0.9rem; font-weight: 600; }
-.hcard-text span  { color: rgba(10,22,40,.55); font-size: 0.75rem; }
+.hcard-text strong { color: var(--navy-900); font-size: 0.95rem; font-weight: 600; }
+.hcard-text span  { color: rgba(10,22,40,.55); font-size: 0.8rem; }
 
 .floating { animation: float 5s ease-in-out infinite; }
 .delay-1  { animation-delay: 1.5s; }
@@ -550,11 +534,6 @@ p  { line-height: 1.7; }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-10px); }
-}
-.hc-pos-2.floating { animation-name: float-mid; }
-@keyframes float-mid {
-  0%, 100% { transform: translateY(-50%); }
-  50%       { transform: translateY(calc(-50% - 10px)); }
 }
 
 /* Scroll indicator */
