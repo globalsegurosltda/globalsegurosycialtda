@@ -350,14 +350,14 @@ p  { line-height: 1.7; }
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: left center;
+  background-position: center 42%;
   z-index: 0;
 }
 .hero-gradient {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(255,255,255,.93) 0%, rgba(255,255,255,.88) 40%, rgba(247,249,252,.8) 70%, rgba(247,249,252,.72) 100%),
+    linear-gradient(100deg, rgba(255,255,255,.82) 0%, rgba(255,255,255,.74) 40%, rgba(247,249,252,.62) 70%, rgba(247,249,252,.52) 100%),
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,99,235,.08) 0%, transparent 70%),
     radial-gradient(ellipse 60% 80% at 20% 80%, rgba(224,123,42,.08) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 85% 15%, rgba(26,58,110,.06) 0%, transparent 60%);
@@ -1605,6 +1605,14 @@ textarea { resize: vertical; min-height: 80px; }
    ============================================================ */
 @media (max-width: 768px) {
   :root { --nav-height: 64px; }
+
+  .hero-photo-bg { background-position: center 38%; }
+  .hero-gradient {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.8) 30%, rgba(255,255,255,.55) 55%, rgba(255,255,255,.4) 100%),
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,99,235,.08) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(224,123,42,.08) 0%, transparent 60%);
+  }
 
   .nav-links {
     position: fixed;
