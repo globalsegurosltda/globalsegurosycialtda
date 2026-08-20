@@ -548,9 +548,7 @@ p  { line-height: 1.7; }
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-10px); }
 }
-.hc-pos-2.floating {
-  animation-name: float-mid;
-}
+.hc-pos-2.floating { animation-name: float-mid; }
 @keyframes float-mid {
   0%, 100% { transform: translateY(-50%); }
   50%       { transform: translateY(calc(-50% - 10px)); }
