@@ -395,7 +395,7 @@ p  { line-height: 1.7; }
   padding: var(--space-16) clamp(var(--space-6), 8vw, 140px);
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 400px;
   gap: var(--space-16);
   align-items: center;
 }
