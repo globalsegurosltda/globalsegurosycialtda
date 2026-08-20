@@ -1308,18 +1308,49 @@ textarea { resize: vertical; min-height: 80px; }
 
 .aseguradoras { margin-top: var(--space-4); }
 .aseg-label { font-size: 0.8rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-3); }
-.aseg-logos { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.aseg-badge {
-  padding: var(--space-2) var(--space-4);
-  background: var(--gray-100);
-  color: var(--gray-700);
-  font-size: 0.82rem;
-  font-weight: 700;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--gray-200);
-  transition: var(--transition-fast);
+
+/* Infinite scrolling logo carousel */
+.aseg-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
-.aseg-badge:hover { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); }
+.aseg-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  width: max-content;
+  animation: aseg-scroll 22s linear infinite;
+}
+.aseg-marquee:hover .aseg-track { animation-play-state: paused; }
+.aseg-logo-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+.aseg-logo-item img {
+  height: 100%;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--transition-normal);
+}
+.aseg-logo-item img:hover { filter: grayscale(0%) opacity(1); }
+
+@keyframes aseg-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aseg-track { animation: none; }
+  .aseg-marquee { overflow-x: auto; }
+}
 
 /* Achievement grid */
 .achievement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
