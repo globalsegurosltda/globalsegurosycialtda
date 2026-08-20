@@ -1267,10 +1267,11 @@ textarea { resize: vertical; min-height: 80px; }
 .nosotros { background: var(--white); }
 .nosotros-layout {
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: minmax(0, 1fr) 420px;
   gap: var(--space-16);
   align-items: center;
 }
+.nosotros-info { min-width: 0; }
 .nosotros-info > p {
   color: var(--gray-600);
   margin-bottom: var(--space-5);
@@ -1306,7 +1307,7 @@ textarea { resize: vertical; min-height: 80px; }
 .value-item strong { color: var(--navy-800); font-size: 0.9rem; display: block; }
 .value-item p     { color: var(--gray-500); font-size: 0.8rem; margin: 0; }
 
-.aseguradoras { margin-top: var(--space-4); }
+.aseguradoras { margin-top: var(--space-4); min-width: 0; width: 100%; }
 .aseg-label { font-size: 0.8rem; font-weight: 600; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-3); }
 
 /* Infinite scrolling logo carousel */
@@ -1314,6 +1315,8 @@ textarea { resize: vertical; min-height: 80px; }
   position: relative;
   overflow: hidden;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
